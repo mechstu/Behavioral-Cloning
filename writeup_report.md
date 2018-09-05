@@ -97,15 +97,15 @@ The model includes RELU layers to introduce nonlinearity, and the data is normal
 
 I initially drove 6 laps, 3 anti-clockwise and 3 clockwise. I added some recovery from the side of the road data as well. I trained the model using this data set, and the vehicle did not do well in the curves. Looking at the histogram of the shows that the; data had a lot of samples of straight line driving that was skewing the model to be trained in straight line driving. 
 
-[image1]: ./examples/All_Driving_dist.jpg "Steering Angle Distribution for all Data"
+<img src="./examples/All_Driving_dist.JPG?raw=true">
 
 To remedy this, the data was sub-sampled so that the distribution is near normal for the center steering angles. This would train the model to drive in curves as well as straight lines equally well. The histogram of the subsampled data is shown below.
 
-[image2]: ./examples/Normalized_Driving_dist.jpg "Normal Distributed Steering Angle Data"
+<img src="./examples/Normalized_Driving_dist.JPG?raw=true">
 
 Even after this adjustment, the vehicle was not performing in right turns. I added an extra lap in the clockwise direction. This added more right turn data to train the model to work better in right turns. The resulting distribution of the augmented data looks like this.
 
-[image3]: ./examples/Normalized_Driving_augmented_dist.jpg "Augmented Data Steering Angle Distribution"
+<img src="./examples/Normalized_Driving_augmented_dist.JPG?raw=true">
 
 After the collection process, I had 8696 data points. I then preprocessed this data by cropping 55 rows from the top and 25 rows from the bottom. Then I normalized the pixels.
 
